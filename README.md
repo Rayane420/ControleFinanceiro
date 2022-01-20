@@ -1,5 +1,5 @@
 ## Controle Financeiro
-### backend de sistema para controle Financeiro familiar
+### Backend de sistema para controle Financeiro #ChallengeAlura
 
 
 ### Caso de Uso:
@@ -11,3 +11,6 @@ As principais funcionalidades a serem implementadas são:
 2. Validações feitas conforme as regras de negócio;
 3. Implementação de base de dados para persistência das informações;
 4. Serviço de autenticação/autorização para restringir acesso às informações.
+
+
+Todo o projeto será desenvolvido no modelo Agil de desenvolvimento usando o Trello como ferramenta de controle do andamento
