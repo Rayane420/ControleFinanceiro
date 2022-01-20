@@ -13,7 +13,8 @@ Após alguns testes com protótipos feitos pelo time de UX de uma empresa, foi r
 4. Serviço de autenticação/autorização para restringir acesso às informações.
 
 
-Todo o projeto será desenvolvido no modelo Agil de desenvolvimento usando o Trello como ferramenta de controle do andamento
+Todo o projeto será desenvolvido no modelo Agil de desenvolvimento usando o Trello como ferramenta de controle do andamento:
+![print do trello com o controle do projeto](https://github.com/Rayane420/ControleFinanceiro/blob/main/trello.png)
 
 ### Ferramentas utilizadas:
 
