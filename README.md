@@ -5,7 +5,7 @@
 ### 🏷️Sobre o Projeto:
 Após alguns testes com protótipos feitos pelo time de UX de uma empresa, foi requisitada a primeira versão de uma aplicação para controle de orçamento familiar. Essa aplicação vai permitir que uma pessoa cadastre suas receitas e despesas do mês, bem como gerar um relatório mensal.
 
-### ⚙️As principais funcionalidades a serem implementadas no back-end são:
+### ⚙️Principais funcionalidades implementadas no back-end:
 
 1. API com rotas implementadas seguindo as boas práticas do modelo REST;
 2. Validações feitas conforme as regras de negócio;
