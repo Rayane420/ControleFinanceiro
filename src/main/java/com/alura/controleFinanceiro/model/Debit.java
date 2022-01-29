@@ -18,5 +18,35 @@ public class Debit {
     private BigDecimal value;
     private LocalDateTime exitDate;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
+
+    public LocalDateTime getExitDate() {
+        return exitDate;
+    }
+
+    public void setExitDate(LocalDateTime exitDate) {
+        this.exitDate = exitDate;
+    }
 }
