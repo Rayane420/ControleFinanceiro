@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -15,7 +16,7 @@ public class Debit {
     private Long id;
     private String description;
     private BigDecimal value;
-    private Date exitDate;
+    private LocalDateTime exitDate;
 
 
 }
