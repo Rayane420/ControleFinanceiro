@@ -6,18 +6,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class Debit {
+public class Income {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
     private BigDecimal value;
-    private LocalDateTime exitDate;
+    private LocalDateTime date;
+
+    public Income() {
+
+    }
+
+    public Income(Long id, String description, BigDecimal value, LocalDateTime date) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+        this.date = date;
+    }
 
     public Long getId() {
         return id;
@@ -43,34 +53,36 @@ public class Debit {
         this.value = value;
     }
 
-    public LocalDateTime getExitDate() {
-        return exitDate;
+    public LocalDateTime getDate() {
+        return date;
     }
 
-    public void setExitDate(LocalDateTime exitDate) {
-        this.exitDate = exitDate;
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Debit debit = (Debit) o;
-        return Objects.equals(id, debit.id) && Objects.equals(description, debit.description) && Objects.equals(value, debit.value) && Objects.equals(exitDate, debit.exitDate);
+        Income income = (Income) o;
+        return Objects.equals(id, income.id) && Objects.equals(description, income.description) && Objects.equals(value, income.value) && Objects.equals(date, income.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, value, exitDate);
+        return Objects.hash(id, description, value, date);
     }
 
     @Override
     public String toString() {
-        return "Debit{" +
+        return "Income{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", value=" + value +
-                ", exitDate=" + exitDate +
+                ", date=" + date +
                 '}';
     }
 }
