@@ -1,6 +1,6 @@
 package com.alura.controleFinanceiro.controller.dto;
 
-import com.alura.controleFinanceiro.model.Expenses;
+import com.alura.controleFinanceiro.model.Expense;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,7 +15,7 @@ public class ExpenseDto {
     private LocalDateTime date;
 
 
-    public ExpenseDto(Expenses expenses) {
+    public ExpenseDto(Expense expenses) {
         this.id = expenses.getId();
         this.description = expenses.getDescription();
         this.value = expenses.getValue();
@@ -54,7 +54,7 @@ public class ExpenseDto {
         this.date = date;
     }
 
-    public static List<ExpenseDto> converter(List<Expenses> expenses){
+    public static List<ExpenseDto> converter(List<Expense> expenses){
         return expenses.stream().map(ExpenseDto::new).collect(Collectors.toList());
     }
 

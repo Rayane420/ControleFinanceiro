@@ -1,36 +1,51 @@
 package com.alura.controleFinanceiro.controller;
 
 import com.alura.controleFinanceiro.controller.dto.ExpenseDto;
-import com.alura.controleFinanceiro.model.Expenses;
+import com.alura.controleFinanceiro.controller.form.ExpenseForm;
+import com.alura.controleFinanceiro.model.Expense;
 import com.alura.controleFinanceiro.repository.ExpenseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/gasto")
+@RequestMapping("/expenses")
 @RequiredArgsConstructor
 public class ExpenseController {
 
     @Autowired
     private final ExpenseRepository expenseRepository;
 
-    //Lista dos Gastos
+    //Listagem de despesas
     @GetMapping
     public List<ExpenseDto> lista(){
-        List<Expenses> expenses = expenseRepository.findAll();
+        List<Expense> expenses = expenseRepository.findAll();
         return ExpenseDto.converter(expenses);
     }
 
-    //TODO Cadastrar gastos
+    //TODO Detalhamento de despesa
 
-    //TODO alterar gasto
+    //Cadastro de despesa
+    @PostMapping
+    public ResponseEntity<ExpenseDto> cadastrar(@RequestBody ExpenseForm expenseForm, UriComponentsBuilder uriComponentsBuilder){
+        Expense expense = expenseForm.converter(expenseRepository);
+        expenseRepository.save(expense);
 
-    //TODO Apagar Gasto
+        URI uri = uriComponentsBuilder.path("expenses/{id}}").buildAndExpand(expense.getId()).toUri();
+
+        return ResponseEntity.created(uri).body(new ExpenseDto(expense));
+
+    }
+
+
+    //TODO atualização de despesa
+
+    //TODO exclusão de despesa
 
 
 }

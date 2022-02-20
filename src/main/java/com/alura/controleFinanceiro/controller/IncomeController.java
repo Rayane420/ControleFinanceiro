@@ -14,21 +14,23 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/receita")
+@RequestMapping("/incomes")
 @RequiredArgsConstructor
 public class IncomeController {
 
     @Autowired
     private final IncomeRepository incomeRepository;
 
-    //Lista receitas
+    //Listagem de receitas
     @GetMapping
     public List<IncomeDto> lista(){
         List<Income> incomes = incomeRepository.findAll();
         return IncomeDto.converter(incomes);
     }
 
-    //Cadastrar receita
+    //TODO detalhamento da receita
+
+    //Cadastro de receita
     @PostMapping
     public ResponseEntity<IncomeDto> cadastrar(@RequestBody IncomeForm incomeForm, UriComponentsBuilder uriComponentsBuilder){
         Income income = incomeForm.converter(incomeRepository);

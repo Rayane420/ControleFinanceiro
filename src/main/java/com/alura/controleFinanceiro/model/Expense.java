@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-public class Expenses {
+public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class Expenses {
     private BigDecimal value;
     private LocalDateTime date;
 
-    public Expenses() {
+    public Expense() {
 
     }
 
-    public Expenses(String description, BigDecimal value, LocalDateTime entryDate) {
+    public Expense(Long id, String description, BigDecimal value, LocalDateTime date) {
         this.id = id;
         this.description = description;
         this.value = value;
@@ -65,7 +65,7 @@ public class Expenses {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Expenses expenses = (Expenses) o;
+        Expense expenses = (Expense) o;
         return Objects.equals(id, expenses.id) && Objects.equals(description, expenses.description) && Objects.equals(value, expenses.value) && Objects.equals(date, expenses.date);
     }
 
