@@ -37,7 +37,7 @@ git clone https://github.com/Rayane420/ControleFinanceiro.git
 ```
 
 
-### Caso você encontre um bug/melhoria nessa aplicação
+### Caso você encontre um bug ponto de melhoria nessa aplicação
 
 Você poderá enviar seu report aqui: https://github.com/Rayane420/ControleFinanceiro/issues
 
