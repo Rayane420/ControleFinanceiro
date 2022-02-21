@@ -13,7 +13,9 @@ public class IncomeForm {
 
     @NotNull @NotEmpty @Length(min = 5)
     private String description;
+    @NotNull @NotEmpty @Length(min = 5)
     private BigDecimal value;
+    @NotNull @NotEmpty @Length(min = 8)
     private LocalDateTime date;
 
 
