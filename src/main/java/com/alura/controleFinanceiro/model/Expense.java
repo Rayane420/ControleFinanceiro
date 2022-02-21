@@ -22,8 +22,7 @@ public class Expense {
 
     }
 
-    public Expense(Long id, String description, BigDecimal value, LocalDateTime date) {
-        this.id = id;
+    public Expense(String description, BigDecimal value, LocalDateTime date) {
         this.description = description;
         this.value = value;
         this.date = date;

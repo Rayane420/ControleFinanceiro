@@ -36,7 +36,7 @@ public class ExpenseController {
         Expense expense = expenseForm.converter(expenseRepository);
         expenseRepository.save(expense);
 
-        URI uri = uriComponentsBuilder.path("expenses/{id}}").buildAndExpand(expense.getId()).toUri();
+        URI uri = uriComponentsBuilder.path("expenses/{id}").buildAndExpand(expense.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new ExpenseDto(expense));
 

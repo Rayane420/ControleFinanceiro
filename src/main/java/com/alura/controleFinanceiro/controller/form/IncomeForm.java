@@ -2,24 +2,21 @@ package com.alura.controleFinanceiro.controller.form;
 
 import com.alura.controleFinanceiro.model.Income;
 import com.alura.controleFinanceiro.repository.IncomeRepository;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class IncomeForm {
 
-    private Long id;
+    @NotNull @NotEmpty @Length(min = 5)
     private String description;
     private BigDecimal value;
     private LocalDateTime date;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDescription() {
         return description;
@@ -46,6 +43,6 @@ public class IncomeForm {
     }
 
     public Income converter(IncomeRepository incomeRepository){
-        return new Income(id, description, value, date);
+        return new Income(description, value, date);
     }
 }

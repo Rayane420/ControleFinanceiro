@@ -7,18 +7,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class ExpenseForm {
-    private Long id;
+
+
     private String description;
     private BigDecimal value;
     private LocalDateTime date;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDescription() {
         return description;
@@ -45,6 +40,6 @@ public class ExpenseForm {
     }
 
     public Expense converter(ExpenseRepository expenseRepository) {
-        return new Expense(id, description, value, date);
+        return new Expense(description, value, date);
     }
 }
