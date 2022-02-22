@@ -32,6 +32,7 @@ public class ExpenseController {
     //TODO Detalhamento de despesa
 
     //Cadastro de despesa
+    //TODO tratar o cadastro de depesas duplicadas(contendo a mesma descrição, dentro do mesmo mês)
     @PostMapping
     public ResponseEntity<ExpenseDto> cadastrar(@RequestBody @Valid ExpenseForm expenseForm, UriComponentsBuilder uriComponentsBuilder){
         Expense expense = expenseForm.converter(expenseRepository);
