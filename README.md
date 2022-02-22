@@ -40,8 +40,9 @@ Para ter uma cópia desse projeto na sua máquina basta executar a linha de coma
 git clone https://github.com/Rayane420/ControleFinanceiro.git
 ```
 
-### 🪙Configurações de Banco de Dados
-
+### Configurações de Banco de Dados
+<br>
+<br>
 
 ### 📭Caso você encontre um bug/ponto de melhoria nessa aplicação
 
