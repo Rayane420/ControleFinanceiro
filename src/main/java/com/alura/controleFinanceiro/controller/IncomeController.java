@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class IncomeController {
 
     //Cadastro de receita
     @PostMapping
-    public ResponseEntity<IncomeDto> cadastrar(@RequestBody IncomeForm incomeForm, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<IncomeDto> cadastrar(@RequestBody @Valid IncomeForm incomeForm, UriComponentsBuilder uriComponentsBuilder){
         Income income = incomeForm.converter(incomeRepository);
         incomeRepository.save(income);
 
@@ -43,7 +44,7 @@ public class IncomeController {
 
     //TODO alterar receita
 
-    //TODO Apagar receita
+    //TODO exclusão da receita
 
 
 

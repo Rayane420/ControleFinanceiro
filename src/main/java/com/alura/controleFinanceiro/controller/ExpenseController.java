@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class ExpenseController {
 
     //Cadastro de despesa
     @PostMapping
-    public ResponseEntity<ExpenseDto> cadastrar(@RequestBody ExpenseForm expenseForm, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<ExpenseDto> cadastrar(@RequestBody @Valid ExpenseForm expenseForm, UriComponentsBuilder uriComponentsBuilder){
         Expense expense = expenseForm.converter(expenseRepository);
         expenseRepository.save(expense);
 
