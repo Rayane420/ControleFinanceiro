@@ -1,7 +1,6 @@
 package com.alura.controleFinanceiro.controller;
 
 import com.alura.controleFinanceiro.controller.dto.ExpenseDto;
-import com.alura.controleFinanceiro.controller.dto.IncomeDto;
 import com.alura.controleFinanceiro.controller.form.ExpenseForm;
 import com.alura.controleFinanceiro.model.Expense;
 import com.alura.controleFinanceiro.repository.ExpenseRepository;
@@ -28,10 +27,11 @@ public class ExpenseController {
         return ExpenseDto.converter(expenses);
     }
 
-    //TODO Detalhamento de despesa
+    //Detalhamento de despesa
    @GetMapping("/{id}")
-    public IncomeDto detalhar(){
-
+    public ExpenseDto detalhar(@PathVariable Long id){
+        Expense expense = expenseRepository.getOne(id);
+        return new ExpenseDto(expense);
     }
 
     //Cadastro de despesa
