@@ -1,5 +1,6 @@
 package com.alura.controleFinanceiro.controller;
 
+import com.alura.controleFinanceiro.controller.dto.ExpenseDto;
 import com.alura.controleFinanceiro.controller.dto.IncomeDto;
 import com.alura.controleFinanceiro.controller.form.IncomeForm;
 import com.alura.controleFinanceiro.model.Income;
@@ -28,6 +29,11 @@ public class IncomeController {
     }
 
     //TODO detalhamento da receita
+    @GetMapping("/{id}")
+    public IncomeDto detalhar(@PathVariable Long id){
+        Income income = incomeRepository.getOne(id);
+        return new IncomeDto(income);
+    }
 
     //Cadastro de receita
     //TODO tratar o cadastro de receitas duplicadas(contendo a mesma descrição, dentro do mesmo mês)
