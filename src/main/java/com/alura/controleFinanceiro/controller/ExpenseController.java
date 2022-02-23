@@ -1,10 +1,10 @@
 package com.alura.controleFinanceiro.controller;
 
 import com.alura.controleFinanceiro.controller.dto.ExpenseDto;
+import com.alura.controleFinanceiro.controller.dto.IncomeDto;
 import com.alura.controleFinanceiro.controller.form.ExpenseForm;
 import com.alura.controleFinanceiro.model.Expense;
 import com.alura.controleFinanceiro.repository.ExpenseRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +16,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/expenses")
-@RequiredArgsConstructor
 public class ExpenseController {
 
     @Autowired
-    private final ExpenseRepository expenseRepository;
+    private ExpenseRepository expenseRepository;
 
     //Listagem de despesas
     @GetMapping
@@ -30,6 +29,10 @@ public class ExpenseController {
     }
 
     //TODO Detalhamento de despesa
+   @GetMapping("/{id}")
+    public IncomeDto detalhar(){
+
+    }
 
     //Cadastro de despesa
     //TODO tratar o cadastro de depesas duplicadas(contendo a mesma descrição, dentro do mesmo mês)

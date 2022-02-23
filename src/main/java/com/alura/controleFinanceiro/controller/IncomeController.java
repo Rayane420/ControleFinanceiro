@@ -4,7 +4,6 @@ import com.alura.controleFinanceiro.controller.dto.IncomeDto;
 import com.alura.controleFinanceiro.controller.form.IncomeForm;
 import com.alura.controleFinanceiro.model.Income;
 import com.alura.controleFinanceiro.repository.IncomeRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +15,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/incomes")
-@RequiredArgsConstructor
 public class IncomeController {
 
     @Autowired
-    private final IncomeRepository incomeRepository;
+    private IncomeRepository incomeRepository;
 
     //Listagem de receitas
     @GetMapping
