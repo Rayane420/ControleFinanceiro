@@ -30,7 +30,7 @@ public class ExpenseController {
     //Detalhamento de despesa
    @GetMapping("/{id}")
     public ExpenseDto detalhar(@PathVariable Long id){
-        Expense expense = expenseRepository.getOne(id);
+        Expense expense = expenseRepository.getById(id);
         return new ExpenseDto(expense);
     }
 

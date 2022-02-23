@@ -31,12 +31,12 @@ public class IncomeController {
     //TODO detalhamento da receita
     @GetMapping("/{id}")
     public IncomeDto detalhar(@PathVariable Long id){
-        Income income = incomeRepository.getOne(id);
+        Income income = incomeRepository.getById(id);
         return new IncomeDto(income);
     }
 
     //Cadastro de receita
-    //TODO tratar o cadastro de receitas duplicadas(contendo a mesma descrição, dentro do mesmo mês)
+    //TODO tratar o cadastro de receitas duplicadas
     @PostMapping
     public ResponseEntity<IncomeDto> cadastrar(@RequestBody @Valid IncomeForm incomeForm, UriComponentsBuilder uriComponentsBuilder){
         Income income = incomeForm.converter(incomeRepository);
