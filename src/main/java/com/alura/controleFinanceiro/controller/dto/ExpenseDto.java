@@ -9,25 +9,17 @@ import java.util.stream.Collectors;
 
 public class ExpenseDto {
 
-    private Long id;
+
     private String description;
     private BigDecimal value;
     private LocalDateTime date;
 
 
     public ExpenseDto(Expense expenses) {
-        this.id = expenses.getId();
+
         this.description = expenses.getDescription();
         this.value = expenses.getValue();
         this.date = expenses.getDate();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescription() {

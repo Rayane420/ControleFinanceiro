@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 public class IncomeDto {
 
-    private Long id;
     private String description;
     private BigDecimal value;
     private LocalDateTime date;
@@ -18,18 +17,9 @@ public class IncomeDto {
     }
 
     public IncomeDto(Income income) {
-        this.id = income.getId();
         this.description = income.getDescription();
         this.value = income.getValue();
         this.date = income.getDate();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescription() {
