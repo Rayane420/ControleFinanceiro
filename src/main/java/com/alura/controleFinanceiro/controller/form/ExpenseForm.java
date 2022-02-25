@@ -45,6 +45,17 @@ public class ExpenseForm {
     }
 
     public Expense converter(ExpenseRepository expenseRepository) {
+
         return new Expense(description, value, date);
+    }
+
+    public Expense update(Long id, ExpenseRepository expenseRepository) {
+        Expense expense = expenseRepository.getById(id);
+
+        expense.setDescription(this.description);
+        expense.setValue(this.value);
+        expense.setDate(this.date);
+
+        return expense;
     }
 }

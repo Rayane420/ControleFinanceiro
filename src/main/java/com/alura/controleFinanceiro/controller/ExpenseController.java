@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -49,6 +50,14 @@ public class ExpenseController {
 
 
     //TODO atualização de despesa
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity<ExpenseDto> update(@PathVariable Long id, @RequestBody @Valid ExpenseForm form){
+
+        Expense expense = form.update(id, expenseRepository);
+
+        return ResponseEntity.ok(new ExpenseDto(expense));
+    }
 
     //TODO exclusão de despesa
 
