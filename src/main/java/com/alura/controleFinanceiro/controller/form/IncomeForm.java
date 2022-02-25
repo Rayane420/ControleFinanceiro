@@ -45,6 +45,17 @@ public class IncomeForm {
     }
 
     public Income converter(IncomeRepository incomeRepository){
+
         return new Income(description, value, date);
+    }
+
+    public Income update(Long id, IncomeRepository incomeRepository) {
+        Income income = incomeRepository.getById(id);
+
+        income.setDate(this.date);
+        income.setDescription(this.description);
+        income.setValue(this.value);
+
+        return income;
     }
 }
