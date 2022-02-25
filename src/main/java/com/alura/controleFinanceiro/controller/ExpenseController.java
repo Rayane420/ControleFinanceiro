@@ -23,14 +23,14 @@ public class ExpenseController {
 
     //Listagem de despesas
     @GetMapping
-    public List<ExpenseDto> lista(){
+    public List<ExpenseDto> findAll(){
         List<Expense> expenses = expenseRepository.findAll();
         return ExpenseDto.converter(expenses);
     }
 
     //Detalhamento de despesa
    @GetMapping("/{id}")
-    public ExpenseDto detalhar(@PathVariable Long id){
+    public ExpenseDto findById(@PathVariable Long id){
         Expense expense = expenseRepository.getById(id);
         return new ExpenseDto(expense);
     }
@@ -38,7 +38,7 @@ public class ExpenseController {
     //Cadastro de despesa
     //TODO tratar o cadastro de depesas duplicadas(contendo a mesma descrição, dentro do mesmo mês)
     @PostMapping
-    public ResponseEntity<ExpenseDto> cadastrar(@RequestBody @Valid ExpenseForm expenseForm, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<ExpenseDto> create(@RequestBody @Valid ExpenseForm expenseForm, UriComponentsBuilder uriComponentsBuilder){
         Expense expense = expenseForm.converter(expenseRepository);
         expenseRepository.save(expense);
 
@@ -49,7 +49,7 @@ public class ExpenseController {
     }
 
 
-    //TODO atualização de despesa
+    //atualização de despesa
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<ExpenseDto> update(@PathVariable Long id, @RequestBody @Valid ExpenseForm form){

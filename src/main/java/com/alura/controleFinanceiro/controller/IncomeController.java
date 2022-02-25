@@ -28,7 +28,7 @@ public class IncomeController {
         return IncomeDto.converter(incomes);
     }
 
-    //TODO detalhamento da receita
+    //detalhamento da receita
     @GetMapping("/{id}")
     public IncomeDto findById(@PathVariable Long id){
         Income income = incomeRepository.getById(id);
@@ -36,7 +36,7 @@ public class IncomeController {
     }
 
     //Cadastro de receita
-    //TODO tratar o cadastro de receitas duplicadas
+    //tratar o cadastro de receitas duplicadas
     @PostMapping
     public ResponseEntity<IncomeDto> create(@RequestBody @Valid IncomeForm incomeForm, UriComponentsBuilder uriComponentsBuilder){
         Income income = incomeForm.converter(incomeRepository);
