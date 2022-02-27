@@ -28,7 +28,7 @@ public class IncomeController {
         return IncomeDto.converter(incomes);
     }
 
-    //detalhamento da receita
+    //Detalhamento da receita
     @GetMapping("/{id}")
     public IncomeDto findById(@PathVariable Long id){
         Income income = incomeRepository.getById(id);
@@ -47,7 +47,7 @@ public class IncomeController {
         return ResponseEntity.created(uri).body(new IncomeDto(income));
     }
 
-    //alterar receita
+    //Alterar receita
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<IncomeDto> update(@PathVariable Long id, @RequestBody @Valid IncomeForm form){
@@ -57,8 +57,13 @@ public class IncomeController {
 
     }
 
-    //TODO exclusão da receita
-
+    //Exclusão da receita
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity<?> remove (@PathVariable Long id){
+        incomeRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
 
 
 }

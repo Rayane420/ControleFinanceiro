@@ -62,7 +62,7 @@ public class ExpenseController {
     //Exclusão de despesa
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<?> remover(@PathVariable Long id){
+    public ResponseEntity<?> remove(@PathVariable Long id){
         expenseRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
