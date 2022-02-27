@@ -49,7 +49,7 @@ public class ExpenseController {
     }
 
 
-    //atualização de despesa
+    //Atualização de despesa
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<ExpenseDto> update(@PathVariable Long id, @RequestBody @Valid ExpenseForm form){
@@ -59,7 +59,14 @@ public class ExpenseController {
         return ResponseEntity.ok(new ExpenseDto(expense));
     }
 
-    //TODO exclusão de despesa
+    //Exclusão de despesa
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity<?> remover(@PathVariable Long id){
+        expenseRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
 
 
 }
