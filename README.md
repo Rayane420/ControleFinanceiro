@@ -32,7 +32,7 @@ Os seguintes itens devem estar instalados em seu computador para utilizar essa a
 - Ide de sua preferência, nesse caso utilizei a ide intellij idea
 
 ### 🖥️🖱️Executando Localmente
-Essa é uma api construída usando Spring Boot e Maven, você deverá ter no mínimo o java 11 instalado na sua máquina para realizar testes nela.
+Essa é uma api construída usando Spring Boot e Maven, você deverá ter no mínimo o java 8 instalado na sua máquina para realizar testes nela.
 
 Para ter uma cópia desse projeto na sua máquina basta executar a linha de comando abaixo na pasta que o projeto ficará salvo:
 
