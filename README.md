@@ -1,5 +1,5 @@
-## Controle Financeiro
-### API para controle Financeiro #ChallengeBackAlura2
+## Controle Financeiro <img src="https://user-images.githubusercontent.com/79534537/155774924-221e28ac-9b60-4de2-bc62-592db1602e3f.png" data-canonical-src="https://user-images.githubusercontent.com/79534537/155774924-221e28ac-9b60-4de2-bc62-592db1602e3f.png" width="40" height="40"/>
+### API para controle Financeiro #ChallengeBackAlura2 
 
 ![imagem de um confre de porquinho e algumas moedas a sua frente](https://github.com/Rayane420/ControleFinanceiro/blob/master/orcamento.png)
 
@@ -32,7 +32,7 @@ Os seguintes itens devem estar instalados em seu computador para utilizar essa a
 - Ide de sua preferência, nesse caso utilizei a ide intellij idea
 
 ### 🖥️🖱️Executando Localmente
-Essa é uma api construída usando Spring Boot e Maven, você deverá ter no mínimo o java 11 instalado na sua máquina para realizar testes nela.
+Essa é uma api construída usando Spring Boot e Maven, você deverá ter no mínimo o java 8 instalado na sua máquina para realizar testes nela.
 
 Para ter uma cópia desse projeto na sua máquina basta executar a linha de comando abaixo na pasta que o projeto ficará salvo:
 
