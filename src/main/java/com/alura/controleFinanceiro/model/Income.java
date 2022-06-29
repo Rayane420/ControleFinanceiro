@@ -1,5 +1,10 @@
 package com.alura.controleFinanceiro.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +14,10 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Income {
 
     @Id
@@ -18,50 +27,11 @@ public class Income {
     private BigDecimal value;
     private LocalDateTime date;
 
-    public Income() {
-
-    }
-
     public Income(String description, BigDecimal value, LocalDateTime date) {
-
         this.description = description;
         this.value = value;
         this.date = date;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    public void setValue(BigDecimal value) {
-        this.value = value;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-
 
     @Override
     public boolean equals(Object o) {

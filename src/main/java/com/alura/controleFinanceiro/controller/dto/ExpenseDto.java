@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class OutcomeDto {
+public class ExpenseDto {
 
 
     private String description;
@@ -15,7 +15,7 @@ public class OutcomeDto {
     private LocalDateTime date;
 
 
-    public OutcomeDto(Expense outcomes) {
+    public ExpenseDto(Expense outcomes) {
 
         this.description = outcomes.getDescription();
         this.value = outcomes.getValue();
@@ -46,8 +46,8 @@ public class OutcomeDto {
         this.date = date;
     }
 
-    public static List<OutcomeDto> converter(List<Expense> outcomes){
-        return outcomes.stream().map(OutcomeDto::new).collect(Collectors.toList());
+    public static List<ExpenseDto> converter(List<Expense> outcomes){
+        return outcomes.stream().map(ExpenseDto::new).collect(Collectors.toList());
     }
 
 }

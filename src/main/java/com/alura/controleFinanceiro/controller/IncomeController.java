@@ -21,22 +21,19 @@ public class IncomeController {
     @Autowired
     private IncomeRepository incomeRepository;
 
-    //Listagem de receitas
     @GetMapping
     public List<IncomeDto> findAll(){
         List<Income> incomes = incomeRepository.findAll();
         return IncomeDto.converter(incomes);
     }
 
-    //Detalhamento da receita
     @GetMapping("/{id}")
     public IncomeDto findById(@PathVariable Long id){
         Income income = incomeRepository.getById(id);
         return new IncomeDto(income);
     }
 
-    //Cadastro de receita
-    //tratar o cadastro de receitas duplicadas
+    //TODO tratar o cadastro de receitas duplicadas
     @PostMapping
     public ResponseEntity<IncomeDto> create(@RequestBody @Valid IncomeForm incomeForm, UriComponentsBuilder uriComponentsBuilder){
         Income income = incomeForm.converter(incomeRepository);
@@ -47,7 +44,6 @@ public class IncomeController {
         return ResponseEntity.created(uri).body(new IncomeDto(income));
     }
 
-    //Alterar receita
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity<IncomeDto> update(@PathVariable Long id, @RequestBody @Valid IncomeForm form){
@@ -57,7 +53,6 @@ public class IncomeController {
 
     }
 
-    //Exclusão da receita
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity<?> remove (@PathVariable Long id){

@@ -18,7 +18,7 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Outcome {
+public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class Outcome {
     private BigDecimal value;
     private LocalDateTime date;
 
-    public Outcome(String description, BigDecimal value, LocalDateTime date) {
+    public Expense(String description, BigDecimal value, LocalDateTime date) {
         this.description = description;
         this.value = value;
         this.date = date;
@@ -37,8 +37,8 @@ public class Outcome {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Outcome outcome = (Outcome) o;
-        return Objects.equals(id, outcome.id) && Objects.equals(description, outcome.description) && Objects.equals(value, outcome.value) && Objects.equals(date, outcome.date);
+        Expense expense = (Expense) o;
+        return Objects.equals(id, expense.id) && Objects.equals(description, expense.description) && Objects.equals(value, expense.value) && Objects.equals(date, expense.date);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Outcome {
 
     @Override
     public String toString() {
-        return "Outcomes{" +
+        return "Expenses{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", value=" + value +

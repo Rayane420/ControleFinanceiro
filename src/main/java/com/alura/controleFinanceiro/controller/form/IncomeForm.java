@@ -2,6 +2,8 @@ package com.alura.controleFinanceiro.controller.form;
 
 import com.alura.controleFinanceiro.model.Income;
 import com.alura.controleFinanceiro.repository.IncomeRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.DecimalMin;
@@ -10,6 +12,8 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class IncomeForm {
 
     @NotNull(message = "Por favor insira uma descrição") @NotEmpty @Length(min = 5)
