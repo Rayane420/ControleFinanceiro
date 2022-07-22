@@ -1,5 +1,5 @@
 ## Controle Financeiro <img src="https://user-images.githubusercontent.com/79534537/155774924-221e28ac-9b60-4de2-bc62-592db1602e3f.png" data-canonical-src="https://user-images.githubusercontent.com/79534537/155774924-221e28ac-9b60-4de2-bc62-592db1602e3f.png" width="40" height="40"/>
-### API para controle Financeiro #ChallengeBackAlura2 
+### API para controle Financeiro
 
 ![imagem de um confre de porquinho e algumas moedas a sua frente](https://github.com/Rayane420/ControleFinanceiro/blob/master/orcamento.png)
 
